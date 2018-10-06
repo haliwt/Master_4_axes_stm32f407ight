@@ -12,6 +12,8 @@ typedef struct {
   __IO int32_t  min_delay;	 //	最大速度对应的定时器值
 }speedRampData;
 
+
+
 /* 宏定义 --------------------------------------------------------------------*/
 #define STEPMOTOR_TIMx                        TIM8
 #define STEPMOTOR_TIM_RCC_CLK_ENABLE()        __HAL_RCC_TIM8_CLK_ENABLE()
@@ -81,6 +83,8 @@ typedef struct {
 /* 扩展变量 ------------------------------------------------------------------*/
 extern TIM_HandleTypeDef htimx_STEPMOTOR;
 /* 函数声明 ------------------------------------------------------------------*/
+
+
 
 void STEPMOTOR_TIMx_Init(void);
 void STEPMOTOR_AxisMoveRel(int32_t step, uint32_t speed);
