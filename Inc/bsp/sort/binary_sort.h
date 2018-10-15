@@ -1,29 +1,35 @@
 #ifndef __BINARY_SORT_H__
 #define __BINARY_SORT_H__
+#include <stdio.h>
+#include <stdlib.h>
 
-//定义一个X轴链表
-typedef struct xnode
+#define MAX(a, b)	(a > b ? a : b)
+#define GET_HEIGHT(T)	(T == NULL ? -1 : T->height)
+
+typedef int myType;
+
+typedef struct treeNode
 {
-    float xdata;
-	struct xnode *x_left;
-	struct xnode *x_right;
-	
-}XNode ;
-
-//封装一个树
-typedef struct xtree
-{
-   XNode *x_root;
-
-}XTree;
+	myType element;
+	struct treeNode *lchild;
+	struct treeNode *rchild;
+	int height;
+}AVLtree;
 
 
+void preOrder(AVLtree *T);
+void inOrder(AVLtree *T);
+void postOrder(AVLtree *T);
+void levelOrder(AVLtree *T);
+AVLtree *find(myType data, AVLtree *T);
+AVLtree *findMin(AVLtree *T);
+AVLtree *findMax(AVLtree *T);
+AVLtree *insert(myType data, AVLtree *T);
+AVLtree *erase(myType data, AVLtree *T);
+void createTree(AVLtree **T);
+int getHeight(AVLtree *T);
 
-//定义源函数
-void x_insert(XTree *xtree, float value); //二叉树
-void x_preorder(XNode *xnode);  //先序遍历 
-void x_inorder(XNode *xnode);  //中序遍历
-
+void printf_avltree(AVLtree *tree,myType key,int direction);
 
 
 
