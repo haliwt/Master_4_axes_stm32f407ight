@@ -327,7 +327,7 @@ void printf_avltree(AVLtree *tree,myType key,int direction)
    if(tree !=NULL)
    {
        if(direction == 0) //tree ????
-           printf("%2d is root \n",tree ->element,key);
+           printf("%2d is root, %d \n",tree ->element,key);
        else // tree ?????
            printf("%2d is %2d's %6s child\n",tree->element,key,direction==1?"right":"left");
            printf_avltree(tree->lchild,tree->element,-1);
